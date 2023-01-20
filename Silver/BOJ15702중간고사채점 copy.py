@@ -1,5 +1,4 @@
 #nonBOJ15702_중간고사채점
-#딕셔너리로 하는 법 깨우치자 
 N, M = map(int, input().split())
 score = list(map(int, input().split()))
 arr = []
@@ -14,15 +13,8 @@ for i in range(M):
             count += score[j-1]
         elif arr[i][j] == 'X':
             continue
-        result.append([num, count])
-        
-min_i , max_j = 100001 , 0 
-for i, j in result:
-    if max_j < j:
-        max_j = j
-        if min_i > i:
-            min_i = i
+    
+    result.append([num, count])
 
-print(i, end=' ')
-print(j)
-        
+result.sort(key=lambda result: (-result[-1], result[0]) )
+print(result[0][0], result[0][1])
