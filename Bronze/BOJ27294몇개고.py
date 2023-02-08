@@ -7,4 +7,3 @@ if 12<=t<=16 and s==0:
 
 else:
     print('280')
-    
