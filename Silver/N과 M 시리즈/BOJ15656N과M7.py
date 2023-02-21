@@ -1,18 +1,15 @@
-#BOJ15654_N과M5.py
-#https://www.acmicpc.net/problem/15654
+#BOJ15654_N과M7.py
+#https://www.acmicpc.net/problem/15656
 
 def nPm():
 	if len(s) == M:
 		print(*s)
 		return
-	# 중복없이 
+	# 중복가능
 	for i in arr:
-		if i in s:
-			continue
-		else:
-			s.append(i)
-			nPm()
-			s.pop()
+		s.append(i)
+		nPm()
+		s.pop()
 
 N, M = map(int, input().split())
 arr = sorted(map(int, input().split()))
