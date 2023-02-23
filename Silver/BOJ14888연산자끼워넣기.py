@@ -7,33 +7,34 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-number = list(map(int, input().split()))
+num = list(map(int, input().split()))
 oper = list(map(int, input().split()))
 operator = '+' * oper[0] + '-' * oper[1] + '*' * oper[2] + '/' * oper[3]
-# 조합가능한, 합이 n-1개인 모든 순열 조합
+# 조합가능한, 합이 n-1개인 연산자들의 모든 순열 조합
+# print(operator)
 operator_perm = permutations(operator, n-1)
 
 #최댓값 
 max_result = -1e9
 #최솟값
 min_result = 1e9
-for perm in operator_perm:
+for i in operator_perm:
     # result에 연산해주면서 값들을 구해나간다.
-    result = number[0]
-    for i in range(1, n):
-        if perm[i-1] == '+':
-            result += number[i]
-        elif perm[i-1] == '-':
-            result -= number[i]
-        elif perm[i-1] == '*':
-            result *= number[i]
-        # 전 값이 -일때 몫을 구해야 함
-        elif perm[i-1] == '/':
-            if result < 0 and number[i] > 0: 
-                result = -1*( result*(-1) // number[i])
+    result = num[0]
+    for j in range(1, n):
+        if i[j-1] == '+':
+            result += num[j]
+        elif i[j-1] == '-':
+            result -= num[j]
+        elif i[j-1] == '*':
+            result *= num[j]
+        elif i[j-1] == '/':
+            # 직전의 값이 -일땐 유지성을 위해 두 번 곱해준다
+            if result < 0 and num[j] > 0: 
+                result = -1*(result*(-1) // num[j])
             # 그 외는 몫만 남기기
             else:
-                result //= number[i]
+                result //= num[j]
     max_result = max(max_result, result)
     min_result = min(min_result, result)
 
