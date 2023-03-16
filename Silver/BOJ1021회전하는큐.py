@@ -23,4 +23,4 @@ for idx in where:
                 while q[0] != idx:
                     q.appendleft(q.pop())
                     count += 1
-print(count)
+print(count) 
