@@ -10,19 +10,19 @@
 # 방문한 셀 영역을 제외하고 dfs가 동작할때마다 카운트
 
 import sys
+from collections import deque
 input = sys.stdin.readline
 
 #테스트케이스의 개수
 T = int(input()) 
 
 def BFS(x,y):           
-    queue = [(x,y)]
+    q = deque([(x, y)])
     #방문처리
     visited[x][y] = 0 
     
-
-    while queue:
-        x,y = queue.pop(0)
+    while q:
+        x,y = q.popleft()
 
         #4방향
         for dx, dy in [(1, 0), (0, 1), (-1, 0), (0, -1)]:
@@ -34,7 +34,7 @@ def BFS(x,y):
 
             #1이면 queue에 추가하고 0으로 바꿔줌
             if visited[nx][ny] == 1 :
-                queue.append((nx,ny))
+                q.append((nx,ny))
                 visited[nx][ny] = 0
 
 # 행렬만들기
