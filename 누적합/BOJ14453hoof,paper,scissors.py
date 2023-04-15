@@ -39,7 +39,6 @@ for i in range(n+1):
     hh = h[i] + (s[n] - s[i])
     pp = p[i] + (h[n] - h[i])
     ss = s[i] + (p[n] - p[i])
-    
     answer = max(answer, hh+pp+ss)
 
 print(answer)
