@@ -8,7 +8,7 @@ def nPm(start):
 	# 중복없이 
 	for i in range(start, N):
 		if arr[i] not in s:
-			s.append(arr[i])
+			s.append(i)
 			nPm(i+1)
 			s.pop()
 
