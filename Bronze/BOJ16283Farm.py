@@ -11,4 +11,8 @@ for i in range(1, n):
         result_a = i
         result_b = n-i
 
-print(result_a, result_b if check == 1 else '-1')
+if check == 1 :
+    print(result_a, result_b)
+    
+else:
+    print('-1')
