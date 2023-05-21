@@ -14,8 +14,8 @@ for i in range(n):
             col = i
             check = True
             break
-        if check == True:
-            break
+    if check == True:
+        break
 
 #가로로 들어갈 문자
 for i in range(n):
