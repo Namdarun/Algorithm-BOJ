@@ -4,7 +4,7 @@
 # 전형적인 dp문제
 #시간초과버전
 # import sys
-# input = sys.stdin.readline
+# input = sys.stdin.readlinegg
 
 # def tran(n):
 #     if n == 1:
