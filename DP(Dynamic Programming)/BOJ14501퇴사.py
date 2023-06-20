@@ -1,5 +1,5 @@
-#BOJ14501_퇴사_S3
-#https://www.acmicpc.net/problem/14501
+# #BOJ14501_퇴사_S3
+# #https://www.acmicpc.net/problem/14501
 
 #전형적인 DP문제 
 #탑다운, 바텀업으로 나눠서 풀어보자
@@ -40,3 +40,31 @@ for i in range(n-1, -1, -1):
     else:
         dp[i] = max(dp[i+1], li[i][1] + dp[i+ li[i][0]])
 print(dp[0])
+
+#DFS
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+t = [0 for _ in range(n)]
+p = [0 for _ in range(n)]
+for i in range(n):
+    t[i], p[i] = map(int, input().split())
+
+result = 0
+def solution(fired, now):
+    global result 
+    #퇴사날일때 업데이트
+    if fired == n:
+        result = max(now, result)
+        return
+    
+    #상담할때
+    if fired + t[fired] <= n:
+        solution(fired + t[fired], now+p[fired])
+    
+    #아니면 dfs
+    solution(fired + 1, now)
+
+solution(0, 0)
+print(result)
