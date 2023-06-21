@@ -10,9 +10,7 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-
 time = [list(map(int, input().split())) for _ in range(n)]
-
 dp = [0 for _ in range(n+1)]
 
 #최대값을 dp에 저장해나간다. 
@@ -63,7 +61,7 @@ def solution(fired, now):
     if fired + t[fired] <= n:
         solution(fired + t[fired], now+p[fired])
     
-    #아니면 dfs
+    #아니면 그냥 넘기기
     solution(fired + 1, now)
 
 solution(0, 0)
