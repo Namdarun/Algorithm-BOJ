@@ -1,4 +1,4 @@
-#BOJ15654_N과M7.py
+#BOJ15656_N과M7.py
 #https://www.acmicpc.net/problem/15656
 
 def nPm():
