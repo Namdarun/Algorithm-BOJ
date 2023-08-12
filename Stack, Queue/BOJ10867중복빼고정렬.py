@@ -6,7 +6,13 @@ input = sys.stdin.readline
 
 n = int(input())
 li = list(map(int, input().split()))
-new_li = set(li)
-sorted_li = sorted(new_li)
-for i in sorted_li:
+li = list(set(li))
+li.sort()
+for i in li:
     print(i, end=' ')
+
+# new_li = set(li)
+# sorted_li = sorted(new_li)
+# for i in sorted_li:
+    # print(i, end=' ')
+
