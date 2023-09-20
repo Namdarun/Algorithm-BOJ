@@ -3,6 +3,7 @@
 
 #분할정복이라고 한다...
 #4방향으로 DFS 적용해보기
+#20230920 재풀이 확인
 
 import sys
 input = sys.stdin.readline
