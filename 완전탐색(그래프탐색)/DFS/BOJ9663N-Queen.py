@@ -1,6 +1,9 @@
 #G4_BOJ9663_N-Queen
 #https://www.acmicpc.net/problem/9663
 #백트래킹
+
+#20230924 복습, 풀이 다시 해야함
+
 import sys
 input = sys.stdin.readline
 # 입력값을 아래에 두면 무조건 시간초과난다...?
