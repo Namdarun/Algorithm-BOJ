@@ -20,3 +20,12 @@ for i in check2:
         result2 += 1
 
 print(min(result1, result2))
+
+
+# 다른풀이
+check = input()
+cnt = 0 
+for i in range(len(check)-1):
+    if check[i] != check[i+1]:
+        cnt += 1
+print((cnt+1)//2)
